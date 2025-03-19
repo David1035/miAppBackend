@@ -6,7 +6,7 @@ const { logErrors, errorHandler, boomErrorHandler } = require('./middlewares/err
 const { tr, el } = require('@faker-js/faker');
 
 const app = express();
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json())
 const whiteList = ['http://localhost:8080', 'https://myApp.com']
