@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors')
 const routerApi = require('./routes')
 
-const { logErrors, errorHandler, boomErrorHandler } = require('./middlewares/error.handler');
+const { logErrors, errorHandler, boomErrorHandler } = require('./api/middlewares/error.handler');
 const { tr, el } = require('@faker-js/faker');
 
 const app = express();
