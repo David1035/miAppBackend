@@ -3,13 +3,12 @@ const cors = require('cors')
 const routerApi = require('./routes')
 
 const { logErrors, errorHandler, boomErrorHandler } = require('./api/middlewares/error.handler');
-const { tr, el } = require('@faker-js/faker');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json())
-const whiteList = ['http://localhost:8080', 'https://myApp.com']
+const whiteList = ['http://localhost:8080', 'https://miAppBackend.com']
 const options = {
   origin: (origin, callback) => {
     if(whiteList.includes(origin) || !origin){
