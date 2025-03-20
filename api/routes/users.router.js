@@ -1,13 +1,17 @@
 const express = require('express');
-const UserService = require('../services/user.service')
+const UserService = require('../services/user.service');
+const { tr } = require('@faker-js/faker');
 
 const router = express.Router();
 const service = new UserService();
 
-router.get('/', (req, res) => {
-  const { limit, offset } = req.query;
-  const result = service.find(limit, offset)
-  res.json(result)
+router.get('/', async (req, res, next) => {
+  try {
+    const users = await service.find();
+    res.json(users)
+  } catch (error) {
+    next(error)
+  }
 })
 
 module.exports = router;

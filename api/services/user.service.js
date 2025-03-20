@@ -1,29 +1,29 @@
+const getConnection = require('../libs/postgres')
+
 class UserService {
   constructor(){
 
   }
 
-  create() {
+  async create() {
 
   }
 
-  find(limit, offset) {
-    if(limit && offset) {
-      return { limit, offset }
-    } else {
-      return { message: 'No hay parámetros' }
-    }
+  async find() {
+    const client = await getConnection();
+    const rta = await client.query('SELECT * FROM tasks')
+    return (rta.rows)
   }
 
-  findOne() {
-
-  }
-
-  update() {
+  async findOne() {
 
   }
 
-  delete() {
+  async update() {
+
+  }
+
+  async delete() {
 
   }
 }
