@@ -5,8 +5,8 @@ async function getConnection() {
         host: 'localhost',
         port: 5432,
         user: 'david',
-        password: 'admin12345',
-        database: 'my_store'
+        password: 'david1035',
+        database: 'quantixdb'
     });
     await client.connect()
     return client
